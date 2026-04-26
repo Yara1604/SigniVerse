@@ -1,3 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 file:/LocalPackages/com.github.homuler.mediapipe-0.16.3.tgz filter=lfs diff=lfs merge=lfs -text
+*.tgz filter=lfs diff=lfs merge=lfs -text
