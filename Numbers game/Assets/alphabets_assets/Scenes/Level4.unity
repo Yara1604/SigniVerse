@@ -5983,7 +5983,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.7999973
+      value: 7.09
       objectReference: {fileID: 0}
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12779,6 +12779,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BridgeTrigger
   bridgeClickable: {fileID: 77279717}
+  signGameManager: {fileID: 0}
+  aiTargetLetter: "\u0627"
+  displayText: "\u0627"
+  signVideo: {fileID: 0}
 --- !u!61 &524816824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12834,8 +12838,8 @@ Transform:
   m_GameObject: {fileID: 524816822}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 106.25, y: -2.38, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 106.25, y: 0.18, z: 0}
+  m_LocalScale: {x: 1, y: 2.9875, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -13317,7 +13321,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.63984, w: 0.7685082}
   m_LocalPosition: {x: 29.18, y: -1.45, z: 0}
-  m_LocalScale: {x: 0.46922308, y: 0.50442344, z: 0.55901474}
+  m_LocalScale: {x: 0.37495163, y: 0.40307993, z: 0.4467033}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -13735,7 +13739,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 95.86, y: -1.33, z: 0}
-  m_LocalScale: {x: 0.16594791, y: 0.17971855, z: 0.18672056}
+  m_LocalScale: {x: 0.14247955, y: 0.15430276, z: 0.16031455}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -14294,6 +14298,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BridgeTrigger
   bridgeClickable: {fileID: 1170783118}
+  signGameManager: {fileID: 0}
+  aiTargetLetter: "\u0627"
+  displayText: "\u0627"
+  signVideo: {fileID: 0}
 --- !u!61 &812108666
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14349,8 +14357,8 @@ Transform:
   m_GameObject: {fileID: 812108664}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.07, y: -2.38, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 37.07, y: 1.58, z: 0}
+  m_LocalScale: {x: 1, y: 4.3190627, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -14386,6 +14394,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BridgeTrigger
   bridgeClickable: {fileID: 1366341691}
+  signGameManager: {fileID: 0}
+  aiTargetLetter: "\u0627"
+  displayText: "\u0627"
+  signVideo: {fileID: 0}
 --- !u!61 &847183233
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14441,8 +14453,8 @@ Transform:
   m_GameObject: {fileID: 847183231}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 175.48, y: -2.38, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 175.48, y: 0.55, z: 0}
+  m_LocalScale: {x: 1, y: 3.2125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -14715,7 +14727,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 144.75998, y: -1.33, z: 0}
-  m_LocalScale: {x: 0.16758895, y: 0.18149577, z: 0.18856703}
+  m_LocalScale: {x: 0.1400726, y: 0.15169606, z: 0.15760629}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -15835,7 +15847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bfe34885eb17f64cb0f2be098193fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolObstacle
-  moveDistance: 2
+  moveDistance: 3
   moveSpeed: 1.5
 --- !u!60 &947799419
 PolygonCollider2D:
@@ -17185,7 +17197,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 69.97, y: 10.4, z: 0}
-  m_LocalScale: {x: 0.70674646, y: 0.70674646, z: 0.70674646}
+  m_LocalScale: {x: 0.61929363, y: 0.61929363, z: 0.61929363}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -18026,7 +18038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.14
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18981,7 +18993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bfe34885eb17f64cb0f2be098193fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolObstacle
-  moveDistance: 2
+  moveDistance: 2.5
   moveSpeed: 1.5
 --- !u!60 &1239111470
 PolygonCollider2D:
@@ -19787,7 +19799,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.4399967, y: -2.26, z: 0}
-  m_LocalScale: {x: 0.22204614, y: 0.21642469, z: 0.22485684}
+  m_LocalScale: {x: 0.18873923, y: 0.21642469, z: 0.22485684}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -22776,8 +22788,8 @@ Transform:
   m_GameObject: {fileID: 1602558900}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 61.25, y: -2.24, z: 0}
-  m_LocalScale: {x: 0.6, y: 1, z: 1}
+  m_LocalPosition: {x: 60.71, y: -0.8, z: 0}
+  m_LocalScale: {x: 0.6, y: 3.8648436, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -29827,7 +29839,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7600002
+      value: 3.58
       objectReference: {fileID: 0}
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.y

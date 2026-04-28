@@ -5926,7 +5926,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.760002
+      value: 35.29
       objectReference: {fileID: 0}
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12594,6 +12594,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BridgeTrigger
   bridgeClickable: {fileID: 77279717}
+  signGameManager: {fileID: 0}
+  aiTargetLetter: "\u0627"
+  displayText: "\u0627"
+  signVideo: {fileID: 0}
 --- !u!61 &524816824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12649,8 +12653,8 @@ Transform:
   m_GameObject: {fileID: 524816822}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 106.25, y: -2.38, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 106.25, y: 1.44, z: 0}
+  m_LocalScale: {x: 1, y: 4.775, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -13132,7 +13136,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.63984, w: 0.7685082}
   m_LocalPosition: {x: 6.72, y: -1.39, z: 0}
-  m_LocalScale: {x: 0.48347148, y: 0.51974076, z: 0.5759897}
+  m_LocalScale: {x: 0.38946044, y: 0.41867715, z: 0.4639885}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -13370,7 +13374,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 65.32, y: -1.33, z: 0}
-  m_LocalScale: {x: 0.53895426, y: 0.58367753, z: 0.60641825}
+  m_LocalScale: {x: 0.47226405, y: 0.5114533, z: 0.53138006}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -13739,7 +13743,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 95.86, y: -1.33, z: 0}
-  m_LocalScale: {x: 0.17907442, y: 0.19393432, z: 0.2014902}
+  m_LocalScale: {x: 0.14925252, y: 0.16163774, z: 0.16793531}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -14163,6 +14167,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BridgeTrigger
   bridgeClickable: {fileID: 1170783118}
+  signGameManager: {fileID: 0}
+  aiTargetLetter: "\u0627"
+  displayText: "\u0627"
+  signVideo: {fileID: 0}
 --- !u!61 &812108666
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14218,8 +14226,8 @@ Transform:
   m_GameObject: {fileID: 812108664}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.07, y: -2.38, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 37.07, y: 0.91, z: 0}
+  m_LocalScale: {x: 1, y: 4.1375, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -14492,7 +14500,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 131.81999, y: -1.33, z: 0}
-  m_LocalScale: {x: 0.17251208, y: 0.18682744, z: 0.19410641}
+  m_LocalScale: {x: 0.15749194, y: 0.17056088, z: 0.1772061}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -14930,7 +14938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolObstacle
   moveDistance: 2
-  moveSpeed: 2
+  moveSpeed: 1.5
 --- !u!1 &864469957
 GameObject:
   m_ObjectHideFlags: 0
@@ -15521,8 +15529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bfe34885eb17f64cb0f2be098193fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolObstacle
-  moveDistance: 2
-  moveSpeed: 2
+  moveDistance: 3
+  moveSpeed: 1.5
 --- !u!60 &947799419
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17359,7 +17367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.14
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18642,7 +18650,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 33.4, y: -2.26, z: 0}
-  m_LocalScale: {x: 0.22204614, y: 0.21642469, z: 0.22485684}
+  m_LocalScale: {x: 0.19429037, y: 0.21642469, z: 0.22485684}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -19751,11 +19759,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 131.71
+      value: 131.85
       objectReference: {fileID: 0}
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.z
@@ -27770,7 +27778,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.720005
+      value: 31.47
       objectReference: {fileID: 0}
     - target: {fileID: 2012641762773588859, guid: 2fabb5e2a2f52be4eb52e84f648b8868, type: 3}
       propertyPath: m_LocalPosition.y

@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.github.homuler.mediapipe": "file:C:/Users/yarah/Downloads/com.github.homuler.mediapipe-0.16.3.tgz",
+    "com.github.homuler.mediapipe": "file:C:/Users/user/Documents/GitHub/SigniVerse/Numbers game/LocalPackages/com.github.homuler.mediapipe-0.16.3.tgz",
     "com.unity.2d.animation": "13.0.2",
     "com.unity.2d.aseprite": "3.0.1",
     "com.unity.2d.psdimporter": "12.0.1",

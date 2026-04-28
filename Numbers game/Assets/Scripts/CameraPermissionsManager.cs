@@ -41,6 +41,9 @@ public class CameraPermissionManager : MonoBehaviour
             // Trigger the iOS pop-up
             yield return Application.RequestUserAuthorization(UserAuthorization.WebCam);
         }
+
+#else
+        yield return null;
 #endif
 
         // --- 3. PROCEED ---
