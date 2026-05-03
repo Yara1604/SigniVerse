@@ -14737,6 +14737,10 @@ PrefabInstance:
       propertyPath: m_ScaleFactor
       value: 3.6
       objectReference: {fileID: 0}
+    - target: {fileID: 131145094960741620, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1721670705960638395, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -14821,6 +14825,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7754336858719718586, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754336858719718586, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7038337202769270753, guid: 39a5416c302a18543b0f1b3067a2306e, type: 3}
     - target: {fileID: 7754336858719718586, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -23598,7 +23610,7 @@ PrefabInstance:
       objectReference: {fileID: 1214570939}
     - target: {fileID: 2700123492167978863, guid: 1b8f2914bc6e71f4fb3dec4263543cf3, type: 3}
       propertyPath: serverUrl
-      value: http://192.168.100.136:8000
+      value: https://signiverse.onrender.com
       objectReference: {fileID: 0}
     - target: {fileID: 3694667214001020476, guid: 1b8f2914bc6e71f4fb3dec4263543cf3, type: 3}
       propertyPath: m_Name

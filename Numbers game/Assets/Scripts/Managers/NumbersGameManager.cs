@@ -63,20 +63,28 @@ public class NumbersGameManager : MonoBehaviour{
         if (fullStars == null || fullStars.Length == 0) return;
         if (currentStars >= fullStars.Length) return;
 
+        // Add the star
         if (fullStars[currentStars] != null)
             fullStars[currentStars].SetActive(true);
 
         currentStars++;
         UpdateCurrentStarsUI();
         PlayStarSound();
-        OpenSignLanguagePanel();
 
+        // Open the puzzle
+        OpenSignLanguagePanel();
+    }
+
+    // Attach this to button in inspector
+    public void CheckForWin()
+    {
         if (currentStars >= starsToWin && !levelRewardSaved)
         {
             SaveLevelStarsToTotal();
             WinLevel();
         }
     }
+
 
     private void SaveLevelStarsToTotal()
     {

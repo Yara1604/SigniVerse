@@ -40,7 +40,6 @@ public class SignGameManager : MonoBehaviour
 
     public void OnSignSuccess()
     {
-        //targetPromptText.text = "?????!";
         targetPromptText.color = Color.green;
         if (continueButton != null) continueButton.SetActive(true);
     }

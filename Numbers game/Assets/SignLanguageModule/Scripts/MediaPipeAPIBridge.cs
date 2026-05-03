@@ -86,10 +86,18 @@ public class MediaPipeApiBridge : MonoBehaviour
             flattenedData.AddRange(frame);
         }
 
-        //for (int i = 1; i < flattenedData.Count; i += 2)
-        //{
-        //    flattenedData[i] = 1f - flattenedData[i];
-        //}
+        // FOR MOBILE, TO CHANGE FLIP Y AXIS (Different coordinate system)
+        for (int i = 1; i < flattenedData.Count; i += 2)
+        {
+            flattenedData[i] = 1f - flattenedData[i];
+        }
+
+        // FOR FLIPPING X AXIS (So right hand becomes left)
+        for (int i = 0; i < flattenedData.Count; i += 2)
+        {
+            flattenedData[i] = 1f - flattenedData[i];
+        }
+
 
 
         isWaitingForResponse = true;
