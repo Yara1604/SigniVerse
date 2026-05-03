@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/lettersGame.unity
     guid: 9cb05195dc2004c459dd6af5c9c17a93
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SignCheckScene.unity
     guid: c16a6ed9c8e432b4885fc4f42cc6d0be
   - enabled: 1
