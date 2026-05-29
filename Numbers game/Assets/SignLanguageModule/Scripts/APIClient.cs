@@ -11,7 +11,7 @@ public class ApiHandler : MonoBehaviour
 
     [Header("API Settings")]
     [Tooltip("Make sure this matches your FastAPI server address")]
-    public string serverUrl = "http://127.0.0.1:8001";
+    public string serverUrl = "https://signiverse-fastapi.onrender.com";
 
     [Tooltip("Toggle this depending on which scene you are in!")]
     public ModelMode currentMode = ModelMode.Letters;
@@ -46,6 +46,7 @@ public class ApiHandler : MonoBehaviour
         // Build the request object
         PredictRequest reqData = new PredictRequest
         {
+            player_id = SystemInfo.deviceUniqueIdentifier, // أضيفي هذا السطر فقط هنا
             seqLen = seqLen,
             featSize = featSize,
             data = data,
@@ -100,6 +101,7 @@ public class ApiHandler : MonoBehaviour
     [System.Serializable]
     public class PredictRequest
     {
+        public string player_id; // أضيفي هذا السطر فقط هنا
         public int seqLen;
         public int featSize;
         public System.Collections.Generic.List<float> data;
@@ -109,6 +111,7 @@ public class ApiHandler : MonoBehaviour
     [System.Serializable]
     public class PredictResponse
     {
+        public string player_id; // أضيفي هذا السطر فقط هنا
         public string letter;
         public string digit;
         public int index;
