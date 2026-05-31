@@ -172,12 +172,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1606215400}
     - target: {fileID: 1452000436782495512, guid: 1b8f2914bc6e71f4fb3dec4263543cf3, type: 3}
+      propertyPath: useTwoHands
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452000436782495512, guid: 1b8f2914bc6e71f4fb3dec4263543cf3, type: 3}
       propertyPath: feedbackManager
       value: 
       objectReference: {fileID: 1502932635}
+    - target: {fileID: 1452000436782495512, guid: 1b8f2914bc6e71f4fb3dec4263543cf3, type: 3}
+      propertyPath: requestInterval
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452000436782495512, guid: 1b8f2914bc6e71f4fb3dec4263543cf3, type: 3}
+      propertyPath: expectedFeatSize
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 2700123492167978863, guid: 1b8f2914bc6e71f4fb3dec4263543cf3, type: 3}
       propertyPath: serverUrl
-      value: https://signiverse.onrender.com
+      value: https://signiverse-fastapi.onrender.com
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700123492167978863, guid: 1b8f2914bc6e71f4fb3dec4263543cf3, type: 3}
+      propertyPath: currentMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3694667214001020476, guid: 1b8f2914bc6e71f4fb3dec4263543cf3, type: 3}
       propertyPath: m_Name
@@ -690,52 +706,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558464694}
   m_CullTransparentMesh: 1
---- !u!1 &581190330
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 581190332}
-  - component: {fileID: 581190331}
-  m_Layer: 0
-  m_Name: UIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &581190331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581190330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dca84950348a8841bcba9ac13723950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelManagerNew
-  exitConfirmPanel: {fileID: 0}
-  levelSelectSceneName: LevelSelect
---- !u!4 &581190332
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581190330}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 84.03773, y: 595.7145, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &634531381
 GameObject:
   m_ObjectHideFlags: 0
@@ -7101,7 +7071,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 581190331}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelManagerNew, Assembly-CSharp
         m_MethodName: ExitToLevelSelect
         m_Mode: 1
@@ -7377,6 +7347,7 @@ GameObject:
   - component: {fileID: 1415591701}
   - component: {fileID: 1415591700}
   - component: {fileID: 1415591699}
+  - component: {fileID: 1415591705}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7512,6 +7483,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1415591705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415591698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcdda8c0aacb8d34da3c717693d0d37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JigsawCanvasManager
+  areaLevels: []
 --- !u!1001 &1502932634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7531,11 +7515,15 @@ PrefabInstance:
     - target: {fileID: 1425489863665013599, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
       propertyPath: continueButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 751229264}
     - target: {fileID: 1721670705960638395, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 5bd7fdac79df432429cc1f2942cb77ad, type: 2}
+    - target: {fileID: 1721670705960638395, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
+      propertyPath: m_isRightToLeft
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1721670705960638395, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
       propertyPath: m_sharedMaterial
       value: 
@@ -13064,4 +13052,3 @@ SceneRoots:
   - {fileID: 1092527511}
   - {fileID: 835145930}
   - {fileID: 1415591704}
-  - {fileID: 581190332}

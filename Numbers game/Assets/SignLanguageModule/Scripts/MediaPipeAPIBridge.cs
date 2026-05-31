@@ -10,7 +10,7 @@ public class MediaPipeAPIBridge : MonoBehaviour
 
     [Header("API Settings")]
     [Tooltip("How often to ask Python for a prediction (in seconds)")]
-    public float requestInterval = 0.5f;
+    public float requestInterval = 0.3f;
 
     [Header("Feedback System")]
     public SignFeedbackManager feedbackManager;
@@ -18,6 +18,13 @@ public class MediaPipeAPIBridge : MonoBehaviour
     [Header("Model Requirements")]
     public int expectedSeqLen = 90;   // The LSTM expects 90 frames
     public int expectedFeatSize = 42; // The LSTM expects 42 floats (X and Y only)
+
+    [Header("Time Scale Fix")]
+    [Tooltip("Match this to your Python TARGET_FPS!")]
+    public float targetCaptureFPS = 30f;
+    private float captureTimer = 0f;
+
+    public bool useTwoHands = false;
 
     private float timer = 0f;
     private bool isWaitingForResponse = false;
@@ -29,16 +36,21 @@ public class MediaPipeAPIBridge : MonoBehaviour
     {
         if (handRunner == null) return;
 
-        // 1. Capture the hand data EVERY frame to build our 90-frame history
-        CaptureHandFrame();
+
+        // Only capture a frame at exactly 30 FPS, ignoring Unity's actual framerate
+        captureTimer += Time.unscaledDeltaTime;
+        float timeBetweenFrames = 1f / targetCaptureFPS;
+
+        if (captureTimer >= timeBetweenFrames)
+        {
+            CaptureHandFrame();
+            captureTimer -= timeBetweenFrames; // Reset timer accurately
+        }
 
         // 2. Run the timer for the API requests
         timer += Time.unscaledDeltaTime;
 
-        // 3. Only send to Python IF:
-        // - Enough time has passed
-        // - Python isn't busy
-        // - We have successfully recorded exactly 90 frames
+        // 3. Only send to Python IF ready
         if (timer >= requestInterval && !isWaitingForResponse && sequenceBuffer.Count == expectedSeqLen)
         {
             SendSequenceToAPI();
@@ -53,26 +65,103 @@ public class MediaPipeAPIBridge : MonoBehaviour
         // For standard LSTMs, it's usually best to only record when a hand is visible.
         if (result.handLandmarks == null || result.handLandmarks.Count == 0) return;
 
-        var firstHand = result.handLandmarks[0];
-        float[] currentFrame = new float[expectedFeatSize];
-        int index = 0;
 
-        // Extract ONLY X and Y (Ignore Z) to get exactly 42 features
-        foreach (var landmark in firstHand.landmarks)
+        // Extract first hand
+        if (!useTwoHands)
         {
-            if (index >= expectedFeatSize) break; // Safety check
+            var firstHand = result.handLandmarks[0];
+            float[] currentFrame = new float[expectedFeatSize];
+            int index = 0;
 
-            currentFrame[index++] = landmark.x;
-            currentFrame[index++] = landmark.y;
+            // Extract ONLY X and Y (Ignore Z) to get exactly 42 features
+            foreach (var landmark in firstHand.landmarks)
+            {
+                if (index >= expectedFeatSize) break; // Safety check
+
+                currentFrame[index++] = landmark.x;
+                currentFrame[index++] = landmark.y;
+            }
+
+            // Add this new frame to our history
+            sequenceBuffer.Enqueue(currentFrame);
+
+            // If we have more than 90 frames, throw away the oldest frame (Sliding Window)
+            if (sequenceBuffer.Count > expectedSeqLen)
+            {
+                sequenceBuffer.Dequeue();
+            }
         }
-
-        // Add this new frame to our history
-        sequenceBuffer.Enqueue(currentFrame);
-
-        // If we have more than 90 frames, throw away the oldest frame (Sliding Window)
-        if (sequenceBuffer.Count > expectedSeqLen)
+        else // for two hands
         {
-            sequenceBuffer.Dequeue();
+            float[] currentFrame = new float[126];
+            int halfSize = 126 / 2;
+
+            // Keep track of which parking spaces are full
+            bool slot0Filled = false;
+            bool slot1Filled = false;
+
+            // Use handLandmarks or handWorldLandmarks depending on what you decided!
+            var landmarksList = result.handWorldLandmarks;
+
+            if (landmarksList != null && result.handedness != null)
+            {
+                // Loop through the detected hands (up to 2)
+                for (int i = 0; i < Mathf.Min(landmarksList.Count, 2); i++)
+                {
+                    var hand = landmarksList[i];
+
+                    // Safely get the label. Default to "right" if MediaPipe glitches and returns null.
+                    string label = "right";
+                    if (i < result.handedness.Count && result.handedness[i].categories != null && result.handedness[i].categories.Count > 0)
+                    {
+                        label = result.handedness[i].categories[0].categoryName.ToLower();
+                    }
+
+                    int offset = 0;
+
+                    // SMART PARKING LOGIC
+                    if (label == "right" && !slot0Filled)
+                    {
+                        offset = 0;
+                        slot0Filled = true;
+                    }
+                    else if (label == "left" && !slot1Filled)
+                    {
+                        offset = halfSize;
+                        slot1Filled = true;
+                    }
+                    else if (!slot0Filled) // If its preferred slot is taken, force it into Slot 0
+                    {
+                        offset = 0;
+                        slot0Filled = true;
+                    }
+                    else // Force it into Slot 1
+                    {
+                        offset = halfSize;
+                        slot1Filled = true;
+                    }
+
+                    int index = offset;
+
+                    // Extract features
+                    foreach (var landmark in hand.landmarks)
+                    {
+                        if (index >= offset + halfSize) break; // Safety check
+
+                        currentFrame[index++] = landmark.x;
+                        currentFrame[index++] = landmark.y;
+                        currentFrame[index++] = landmark.z;
+                        
+                    }
+                }
+            }
+
+            sequenceBuffer.Enqueue(currentFrame);
+
+            if (sequenceBuffer.Count > expectedSeqLen)
+            {
+                sequenceBuffer.Dequeue();
+            }
         }
     }
 
@@ -80,28 +169,45 @@ public class MediaPipeAPIBridge : MonoBehaviour
     {
         List<float> flattenedData = new List<float>();
 
-        // Flatten all 90 frames into one giant list
+        // Flatten all frames into one giant list
         foreach (var frame in sequenceBuffer)
         {
             flattenedData.AddRange(frame);
         }
 
         // FOR MOBILE, TO CHANGE FLIP Y AXIS (Different coordinate system)
-        //for (int i = 1; i < flattenedData.Count; i += 2)
+        //if (!useTwoHands)
         //{
-        //    flattenedData[i] = 1f - flattenedData[i];
+        //    for (int i = 1; i < flattenedData.Count; i += 2)
+        //    {
+        //        flattenedData[i] = 1f - flattenedData[i];
+        //    }
         //}
-
-        // FOR FLIPPING X AXIS (So right hand becomes left)
-        for (int i = 0; i < flattenedData.Count; i += 2)
-        {
-            flattenedData[i] = 1f - flattenedData[i];
-        }
-
+        //else
+        //{
+        //    for (int i = 1; i < flattenedData.Count; i += 3)
+        //    {
+        //        flattenedData[i] = -flattenedData[i];
+        //    }
+        //}
+       
 
 
         isWaitingForResponse = true;
         timer = 0f;
+
+        // THIS IS FOR DEBUGGING!
+
+        // Grab just the first frame of data (126 features) from our flattened list
+        List<float> firstFrame = flattenedData.GetRange(0, expectedFeatSize);
+
+        // Print the first 5 numbers (Should be the Left Hand)
+        Debug.Log($"<color=cyan>UNITY LEFT HAND (0-4):</color> {string.Join(", ", firstFrame.GetRange(0, 5))}");
+
+        // Print the middle 5 numbers (Should be the Right Hand, starting at index 63)
+        Debug.Log($"<color=orange>UNITY RIGHT HAND (63-67):</color> {string.Join(", ", firstFrame.GetRange(63, 5))}");
+
+        // END OF DEBUGGING!
 
         // Send to FastAPI
         APIClient.Instance.RequestPrediction(
@@ -117,9 +223,20 @@ public class MediaPipeAPIBridge : MonoBehaviour
     private void HandleSuccess(PredictResponse response)
     {
         isWaitingForResponse = false;
+        string resultText = "";
 
-        // Note: I updated this to look for 'letter' or 'digit' based on your Python code!
-        string resultText = string.IsNullOrEmpty(response.letter) ? response.digit : response.letter;
+        if (!string.IsNullOrEmpty(response.home))
+        {
+            resultText = response.home;
+        }
+        else if (!string.IsNullOrEmpty(response.letter))
+        {
+            resultText = response.letter;
+        }
+        else
+        {
+            resultText = response.digit;
+        }
 
         if (feedbackManager != null)
         {

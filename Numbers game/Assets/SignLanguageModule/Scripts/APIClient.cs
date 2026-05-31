@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 
 public class APIClient : MonoBehaviour
 {
-    public enum ModelMode { Letters, Numbers }
+    public enum ModelMode { Letters, Numbers, Home }
 
     [Header("API Settings")]
     [Tooltip("Make sure this matches your FastAPI server address")]
@@ -32,9 +32,24 @@ public class APIClient : MonoBehaviour
     }
 
     /// Sends the data to the Python FastAPI backend.
-    public void RequestPrediction(ModelMode mode,int seqLen, int featSize, List<float> data, Action<PredictResponse> onSuccess, Action<string> onError)
+    /// Sends the data to the Python FastAPI backend.
+    public void RequestPrediction(ModelMode mode, int seqLen, int featSize, List<float> data, Action<PredictResponse> onSuccess, Action<string> onError)
     {
-        string endpoint = (mode == ModelMode.Numbers) ? "/predict_numbers" : "/predict_letters";
+        string endpoint = "";
+
+        switch (mode)
+        {
+            case ModelMode.Numbers:
+                endpoint = "/predict_numbers";
+                break;
+            case ModelMode.Letters:
+                endpoint = "/predict_letters";
+                break;
+            case ModelMode.Home:
+                endpoint = "/predict_home";
+                break;
+        }
+
         StartCoroutine(PostPredictionRoutine(endpoint, seqLen, featSize, data, onSuccess, onError));
     }
 
@@ -77,9 +92,15 @@ public class APIClient : MonoBehaviour
             }
             else
             {
-                // Parse the response
+
                 string jsonRes = request.downloadHandler.text;
+
+                Debug.Log($"<color=yellow>RAW JSON FROM PYTHON:</color> {jsonRes}");
+
+                // Parse the response
                 PredictResponse response = JsonUtility.FromJson<PredictResponse>(jsonRes);
+
+                
 
                 // Check if Python returned a specific error (like bad_length or labels_mismatch)
                 if (!string.IsNullOrEmpty(response.error))
@@ -96,7 +117,6 @@ public class APIClient : MonoBehaviour
         }
     }
 
-    // --- Paste this at the bottom of APIClient.cs ---
 
     [System.Serializable]
     public class PredictRequest
@@ -114,6 +134,7 @@ public class APIClient : MonoBehaviour
         public string player_id; // أضيفي هذا السطر فقط هنا
         public string letter;
         public string digit;
+        public string home;
         public int index;
 
         public float confidence;
