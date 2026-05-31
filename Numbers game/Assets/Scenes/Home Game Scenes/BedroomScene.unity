@@ -477,7 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JigsawLevelButton
   imagePathForThisLevel: Jigsaw_game_assets/clothes_asset_neutral
-  columnsForThisLevel: 7
+  columnsForThisLevel: 3
   targetSignWord: "\u0627"
   displaySignText: "\u0627"
   instructionalVideo: {fileID: 32900000, guid: fe426da3eb71bf843a6f0ef38f86db7c, type: 3}
