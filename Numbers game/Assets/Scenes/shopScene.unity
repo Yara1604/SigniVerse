@@ -173,202 +173,202 @@ MonoBehaviour:
   shopItemsList:
   - itemName: 0
     image: {fileID: 3083089168873209362, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 0
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 1
     image: {fileID: -517894308114096243, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 10
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 2
     image: {fileID: 7755224123621818408, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 20
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 3
     image: {fileID: -3557554893070573299, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 20
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 4
     image: {fileID: -4256427906160430202, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 20
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 5
     image: {fileID: -6066236442320969475, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 25
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 6
     image: {fileID: 1893670189769602202, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 25
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 7
     image: {fileID: -5691007311618604778, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 25
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 8
     image: {fileID: -417436994572597314, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 25
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 9
     image: {fileID: -7232779301871914677, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 25
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 10
     image: {fileID: 7729768860333772239, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 30
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 11
     image: {fileID: -3102994270238535240, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 40
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 12
     image: {fileID: -4572274602858593414, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 50
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 13
     image: {fileID: 1189779305756619486, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 50
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 14
     image: {fileID: -1975635887328401948, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 60
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 15
     image: {fileID: 4367732871754573918, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 60
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 16
     image: {fileID: 8901077990765384427, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 60
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 17
     image: {fileID: -919312135990662955, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 60
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 18
     image: {fileID: 4306828662039877052, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 60
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 19
     image: {fileID: 3538125613680756451, guid: b2e2031d1bb208c4ca31a2978d6fde86, type: 3}
-    price: 2
+    price: 60
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 20
     image: {fileID: 21300000, guid: aaeac2c00af217745a883d38e9a51eb8, type: 3}
-    price: 2
+    price: 70
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 21
     image: {fileID: 21300000, guid: 1735fa64414f1524cab20902712fe2c5, type: 3}
-    price: 2
+    price: 70
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 22
     image: {fileID: 21300000, guid: 419d99ebc28f3d54ebe81acafcd2c516, type: 3}
-    price: 2
+    price: 70
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 23
     image: {fileID: 21300000, guid: 84aa9c309f43dcb41b4d3d3f4cd53e0b, type: 3}
-    price: 2
+    price: 70
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 24
     image: {fileID: 21300000, guid: 67e85e7931f1cb7438358931573d6145, type: 3}
-    price: 2
+    price: 70
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 25
     image: {fileID: 21300000, guid: b9f66b9fef0d6fa42984a7a96e4da2dc, type: 3}
-    price: 2
+    price: 70
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 26
     image: {fileID: 21300000, guid: 2ff8cf28fac568b48969d40b46a746e3, type: 3}
-    price: 2
+    price: 70
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 27
     image: {fileID: 21300000, guid: db0ae54b7323e3149a49a05777876c69, type: 3}
-    price: 2
+    price: 70
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 28
     image: {fileID: 21300000, guid: a717afa09d60a2f47bf2af86f5ad3d00, type: 3}
-    price: 2
+    price: 70
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 29
     image: {fileID: 21300000, guid: d43942009a88b844aa28a039ebd0efdb, type: 3}
-    price: 2
+    price: 80
+    isPurchased: 0
+    itemButton: {fileID: 0}
+  - itemName: 30
+    image: {fileID: 21300000, guid: d153f3bf6289e5844818b30c6146f773, type: 3}
+    price: 80
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 31
     image: {fileID: 21300000, guid: b8c34744bc6139c4daa05923f3273c0e, type: 3}
-    price: 2
+    price: 80
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 32
     image: {fileID: 21300000, guid: b1302b303f8dd854fb147923722e116b, type: 3}
-    price: 2
+    price: 80
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 33
     image: {fileID: 21300000, guid: 0659392f7ab40c24d82dedbd228010f2, type: 3}
-    price: 2
+    price: 80
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 34
     image: {fileID: 21300000, guid: 5cc34fa91482a0c4c8e175e94908c25a, type: 3}
-    price: 2
+    price: 90
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 35
     image: {fileID: 21300000, guid: f6701f690cd307f46b5277f291331f7c, type: 3}
-    price: 2
+    price: 90
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 36
     image: {fileID: 21300000, guid: 874ff915511da0940aad55127d1275e1, type: 3}
-    price: 2
+    price: 90
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 37
     image: {fileID: 21300000, guid: 48eff1dc737bced4cbbf44f71110011f, type: 3}
-    price: 2
+    price: 90
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 38
     image: {fileID: 21300000, guid: e453bd4ae358dfc4981fbb8c5ae98d94, type: 3}
-    price: 2
+    price: 90
     isPurchased: 0
     itemButton: {fileID: 0}
   - itemName: 39
     image: {fileID: 21300000, guid: 5da5fcb04f095934097a5784d37d70d5, type: 3}
-    price: 2
-    isPurchased: 0
-    itemButton: {fileID: 0}
-  - itemName: 40
-    image: {fileID: 21300000, guid: 1aafa63d6d4cb9d43afdd039641c64d0, type: 3}
-    price: 2
+    price: 90
     isPurchased: 0
     itemButton: {fileID: 0}
   shopScrollView: {fileID: 393059332}
@@ -376,6 +376,9 @@ MonoBehaviour:
   totalStarsDisplay: {fileID: 1342827432}
   arabicFont: {fileID: 11400000, guid: 5bd7fdac79df432429cc1f2942cb77ad, type: 2}
   ShopPanel: {fileID: 544408467}
+  noCoinsText: {fileID: 790579457}
+  shakeDuration: 0.4
+  shakeMagnitude: 6
 --- !u!114 &235234944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6679,7 +6682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &790579456
 RectTransform:
   m_ObjectHideFlags: 0
