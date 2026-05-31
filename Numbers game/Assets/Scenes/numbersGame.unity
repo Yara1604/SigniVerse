@@ -5663,11 +5663,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: APIManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1452000436782495512, guid: 1b8f2914bc6e71f4fb3dec4263543cf3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3694667214001020476, guid: 1b8f2914bc6e71f4fb3dec4263543cf3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 622583229}
   m_SourcePrefab: {fileID: 100100000, guid: 1b8f2914bc6e71f4fb3dec4263543cf3, type: 3}
+--- !u!1 &136366108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3694667214001020476, guid: 1b8f2914bc6e71f4fb3dec4263543cf3, type: 3}
+  m_PrefabInstance: {fileID: 136366107}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &141365405
 GameObject:
   m_ObjectHideFlags: 0
@@ -12671,7 +12680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8787232309217233452, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
       propertyPath: requiredHoldTime
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8871114345912302521, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
       propertyPath: m_Pivot.x
@@ -12823,6 +12832,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 105455324802012316, guid: 1b8f2914bc6e71f4fb3dec4263543cf3, type: 3}
   m_PrefabInstance: {fileID: 136366107}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &622583229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136366108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0195702feaed9ff4885673fdc283bdc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MediaPipeAPIBridge
+  handRunner: {fileID: 8702363}
+  requestInterval: 0.5
+  feedbackManager: {fileID: 604173382}
+  expectedSeqLen: 90
+  expectedFeatSize: 42
 --- !u!1 &650355153
 GameObject:
   m_ObjectHideFlags: 0

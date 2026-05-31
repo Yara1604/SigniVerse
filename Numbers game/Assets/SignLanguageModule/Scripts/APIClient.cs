@@ -5,7 +5,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class ApiHandler : MonoBehaviour
+public class APIClient : MonoBehaviour
 {
     public enum ModelMode { Letters, Numbers }
 
@@ -17,7 +17,7 @@ public class ApiHandler : MonoBehaviour
     public ModelMode currentMode = ModelMode.Letters;
 
     // Singleton instance for easy access from other scripts
-    public static ApiHandler Instance { get; private set; }
+    public static APIClient Instance { get; private set; }
 
     private void Awake()
     {

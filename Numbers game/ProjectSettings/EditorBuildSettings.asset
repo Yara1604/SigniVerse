@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/numbersGame.unity
     guid: 534bb155d0731cf449cde9265371bb80
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/lettersGame.unity
     guid: 9cb05195dc2004c459dd6af5c9c17a93
   - enabled: 0
@@ -65,6 +65,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/alphabets_assets/Scenes/Level13.unity
     guid: 06a84495feb34b44188a46f4b1ccfc9f
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/homeGame.unity
+    guid: ecb129b1511d9b14cb22542619eb3343
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/homeGameTemplate.unity
+    guid: b1066a742cf06e84c8c26b628fd1b74c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

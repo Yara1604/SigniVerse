@@ -1,9 +1,9 @@
 using Mediapipe.Unity.Sample.HandLandmarkDetection;
 using System.Collections.Generic;
 using UnityEngine;
-using static ApiHandler;
+using static APIClient;
 
-public class MediaPipeApiBridge : MonoBehaviour
+public class MediaPipeAPIBridge : MonoBehaviour
 {
     [Header("MediaPipe Reference")]
     public HandLandmarkerRunner handRunner;
@@ -87,10 +87,10 @@ public class MediaPipeApiBridge : MonoBehaviour
         }
 
         // FOR MOBILE, TO CHANGE FLIP Y AXIS (Different coordinate system)
-        for (int i = 1; i < flattenedData.Count; i += 2)
-        {
-            flattenedData[i] = 1f - flattenedData[i];
-        }
+        //for (int i = 1; i < flattenedData.Count; i += 2)
+        //{
+        //    flattenedData[i] = 1f - flattenedData[i];
+        //}
 
         // FOR FLIPPING X AXIS (So right hand becomes left)
         for (int i = 0; i < flattenedData.Count; i += 2)
@@ -104,8 +104,8 @@ public class MediaPipeApiBridge : MonoBehaviour
         timer = 0f;
 
         // Send to FastAPI
-        ApiHandler.Instance.RequestPrediction(
-            mode: ApiHandler.Instance.currentMode,
+        APIClient.Instance.RequestPrediction(
+            mode: APIClient.Instance.currentMode,
             seqLen: expectedSeqLen,
             featSize: expectedFeatSize,
             data: flattenedData,
