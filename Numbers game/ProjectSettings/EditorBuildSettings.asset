@@ -51,6 +51,12 @@ EditorBuildSettings:
     path: Assets/alphabets_assets/Scenes/Level8.unity
     guid: 198f54b5b25fcff4f828961c70694d94
   - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/BathroomScene.unity
+    guid: 95f91487b126c6242a797911f0f0f1db
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/KitchenScene.unity
+    guid: 194355a237c7b5b4aa23e0420dee86c1
+  - enabled: 1
     path: Assets/alphabets_assets/Scenes/Level9.unity
     guid: 4d4d91a75b79f40439acd4a330587166
   - enabled: 1
@@ -66,11 +72,71 @@ EditorBuildSettings:
     path: Assets/alphabets_assets/Scenes/Level13.unity
     guid: 06a84495feb34b44188a46f4b1ccfc9f
   - enabled: 1
-    path: Assets/Scenes/Home Game Scenes/homeGame.unity
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/LivingRoom Levels/chair.unity
+    guid: e83fe32768985f142a37f53afbdc33fb
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/LivingRoom Levels/lamp.unity
+    guid: 929c785cfe7670f41ac91d3e91ea7947
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/LivingRoom Levels/mobile.unity
+    guid: 0cac673594a9cb640ab8ab4312e03a97
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/LivingRoom Levels/table.unity
+    guid: 1de9e99ac2c07754eabd4ab834368fe0
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/LivingRoom Levels/tv.unity
+    guid: 931ba2764adc64f4db9e13fe4a5b913e
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/Bathroom Levels/shower.unity
+    guid: ff8a085cd273d3348b2e766941b5f0c9
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/Bathroom Levels/sink.unity
+    guid: 9ba078292dc571049a659d3ab563d3a1
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/Bathroom Levels/toothbrush.unity
+    guid: 29028c3f3a7cb73489158a84eb90aadf
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/Bathroom Levels/toothpaste.unity
+    guid: 7f61337a7c895d34ea3490508fa80ec1
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/Bedroom Levels/bed.unity
+    guid: c0b9fde1287e1b343843542fb5fff00d
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/Bedroom Levels/clothes.unity
+    guid: e2cdff6623df2414386313a9d8d18e5b
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/Bedroom Levels/wardrobe.unity
+    guid: ff8a00c9e18432046b78d4b493246189
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/Bedroom Levels/window.unity
+    guid: dbd999a37ce34c24cad234bddf9b37da
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/Kitchen Levels/cup.unity
+    guid: a43322b8869a0f44ab38292837cef23d
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/Kitchen Levels/fork.unity
+    guid: 9b72ee051879d844880dda271d5cc707
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/Kitchen Levels/fridge.unity
+    guid: 46ff11836f07a7b4b8965d22cb5df376
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/Kitchen Levels/plate.unity
+    guid: 9350bbac825f66b4891f8929abd633e7
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/Kitchen Levels/spoon.unity
+    guid: 3c0a3d49b962d344e97a92237ede0a04
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/homeGame.unity
     guid: ecb129b1511d9b14cb22542619eb3343
   - enabled: 1
     path: Assets/Scenes/Home Game Scenes/homeGameTemplate.unity
     guid: b1066a742cf06e84c8c26b628fd1b74c
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/LivingRoomScene.unity
+    guid: e867c80810caddf458065b27ad801579
+  - enabled: 1
+    path: Assets/Scenes/Home Game Scenes/GameplayScenes/BedroomScene.unity
+    guid: 298e992e16e3dae44a9bc983d0de2069
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

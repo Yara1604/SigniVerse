@@ -87,31 +87,15 @@ public class BoardGen : MonoBehaviour
 
         jigsawManager = GetComponent<JigsawManager>();
 
-        if (!string.IsNullOrEmpty(JigsawLevelButton.SelectedImagePath))
+        if (jigsawManager == null)
         {
-            imageFileName = JigsawLevelButton.SelectedImagePath;
-            puzzleColumns = JigsawLevelButton.SelectedColumns;
-
-            // Pass the AI target values cleanly to the streamlined manager
-            jigsawManager.aiTargetWord = JigsawLevelButton.SelectedTargetWord;
-            jigsawManager.displayWord = JigsawLevelButton.SelectedDisplayText;
-            jigsawManager.instructionalVideo = JigsawLevelButton.SelectedVideo;
-        }
-
-        if (!string.IsNullOrEmpty(JigsawLevelButton.SelectedImagePath))
-        {
-            imageFileName = JigsawLevelButton.SelectedImagePath;
-            puzzleColumns = JigsawLevelButton.SelectedColumns;
-
-            if (jigsawManager != null)
-            {
-                jigsawManager.aiTargetWord = JigsawLevelButton.SelectedTargetWord;
-                jigsawManager.displayWord = JigsawLevelButton.SelectedDisplayText;
-                jigsawManager.instructionalVideo = JigsawLevelButton.SelectedVideo;
-            }
+            Debug.LogError("[BoardGen] Missing JigsawManager component on the same GameObject!", this);
+            return;
         }
 
         mBaseSpriteOpaque = LoadBaseTexture();
+        if (mBaseSpriteOpaque == null) return;
+
         mGameObjectOpaque = new GameObject();
         mGameObjectOpaque.name = imageFileName + "_Opaque";
         mGameObjectOpaque.AddComponent<SpriteRenderer>().sprite = mBaseSpriteOpaque;
@@ -127,8 +111,7 @@ public class BoardGen : MonoBehaviour
 
         SetCameraPosition();
 
-       // CreateJigsawTiles();
-       StartCoroutine(Coroutine_CreateJigsawTiles());
+        StartCoroutine(Coroutine_CreateJigsawTiles());
     }
 
     Sprite CreateTransparentView(Texture2D tex)

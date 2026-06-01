@@ -31,8 +31,8 @@ public class JigsawManager : MonoBehaviour
     [SerializeField] private ParticleSystem confetti_2;
 
     [Header("Navigation Settings")]
-    [Tooltip("The name of the level selection scene for this specific area.")]
-    public string areaLevelSelectSceneName = "Area1LevelSelect";
+    [Tooltip("The name of the planet scene to select minigame")]
+    public string minigamesScene = "planetsScene";
 
     [Header("Puzzle Star Payout")]
     [Tooltip("How many stars should the player earn for completing this level?")]
@@ -46,6 +46,7 @@ public class JigsawManager : MonoBehaviour
     [HideInInspector] public bool TileMovementEnabled = false;
     [HideInInspector] public int totalTilesInCorrectPosition = 0;
     [HideInInspector] public int totalTilesNeeded = 0;
+
 
     private bool levelRewardSaved = false;
     private bool levelFinished = false;
@@ -70,10 +71,15 @@ public class JigsawManager : MonoBehaviour
         levelFinished = false;
         totalTilesInCorrectPosition = 0;
 
+        // Cleaned up! No more reading from JigsawLevelButton static fields.
+        // The variables (aiTargetWord, displayWord, instructionalVideo) are now 
+        // typed out directly into this script's inspector for each level scene.
+
         UpdateTotalStarsUI();
         SetupExitPanel();
         SetupWinPanel();
     }
+
 
     // Triggered automatically by BoardGen when tile generation finishes
     public void StartGame(GameObject[,] tiles, int numX, int numY)
@@ -105,6 +111,7 @@ public class JigsawManager : MonoBehaviour
             PlayStarSound();
             SaveLevelStarsToTotal();
             WinLevel(); // Shows the win panel and triggers confetti particles
+            
         }
     }
 
@@ -218,13 +225,13 @@ public class JigsawManager : MonoBehaviour
     public void ExitToPlanets()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(areaLevelSelectSceneName);
+        SceneManager.LoadScene(minigamesScene);
     }
 
     public void ConfirmExitAndGoToPlanets()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(areaLevelSelectSceneName);
+        SceneManager.LoadScene(minigamesScene);
     }
 
     private IEnumerator FadeCanvasGroup(CanvasGroup canvasGroup, float startAlpha, float endAlpha, Action onComplete = null)

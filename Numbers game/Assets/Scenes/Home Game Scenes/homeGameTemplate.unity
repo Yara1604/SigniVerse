@@ -787,19 +787,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 634531384}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 835145931}
-        m_TargetAssemblyTypeName: JigsawManager, Assembly-CSharp
-        m_MethodName: ExitToPlanets
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &634531384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -952,9 +940,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BackToLevelsManager, Assembly-CSharp
-        m_MethodName: ContinuePlaying
+      - m_Target: {fileID: 1415591706}
+        m_TargetAssemblyTypeName: JigsawManager, Assembly-CSharp
+        m_MethodName: CancelExit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1085,8 +1073,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WinUIManager, Assembly-CSharp
+      - m_Target: {fileID: 1415591706}
+        m_TargetAssemblyTypeName: JigsawManager, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
@@ -1147,6 +1135,7 @@ GameObject:
   - component: {fileID: 751229268}
   - component: {fileID: 751229267}
   - component: {fileID: 751229266}
+  - component: {fileID: 751229269}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -1241,6 +1230,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1415591705}
+        m_TargetAssemblyTypeName: JigsawLevelButton, Assembly-CSharp
+        m_MethodName: OnClickExecuteNavigation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &751229267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1279,6 +1280,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751229264}
   m_CullTransparentMesh: 1
+--- !u!114 &751229269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751229264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88cd650fd2255ad41a9009ce1f9f1024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JigsawLevelButton
+  buttonType: 1
+  selectedCategory: 0
+  selectedIndex: 0
+  categorySelectSceneName: homeGame
+  planetsSceneName: planetsScene
 --- !u!1 &759407252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,6 +1309,7 @@ GameObject:
   - component: {fileID: 759407256}
   - component: {fileID: 759407255}
   - component: {fileID: 759407254}
+  - component: {fileID: 759407257}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -1362,9 +1381,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BackToLevelsManager, Assembly-CSharp
-        m_MethodName: ExitToLevelSelect
+      - m_Target: {fileID: 1415591705}
+        m_TargetAssemblyTypeName: JigsawLevelButton, Assembly-CSharp
+        m_MethodName: OnClickExecuteNavigation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1412,6 +1431,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759407252}
   m_CullTransparentMesh: 1
+--- !u!114 &759407257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759407252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88cd650fd2255ad41a9009ce1f9f1024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JigsawLevelButton
+  buttonType: 2
+  selectedCategory: 0
+  selectedIndex: 0
+  categorySelectSceneName: homeGame
+  planetsSceneName: planetsScene
 --- !u!1 &827108816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,7 +1596,7 @@ MonoBehaviour:
   winSound: {fileID: 8300000, guid: e62c11672c2fd424e9f44c2f5ce7339b, type: 3}
   confetti_1: {fileID: 983756441}
   confetti_2: {fileID: 2115940204}
-  areaLevelSelectSceneName: Area1LevelSelect
+  minigamesScene: planetsScene
   starsToReward: 3
   aiTargetWord: "\u0627"
   displayWord: "\u0627"
@@ -7000,6 +7036,7 @@ GameObject:
   - component: {fileID: 1327964743}
   - component: {fileID: 1327964742}
   - component: {fileID: 1327964741}
+  - component: {fileID: 1327964744}
   m_Layer: 5
   m_Name: NextButton
   m_TagString: Untagged
@@ -7071,9 +7108,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelManagerNew, Assembly-CSharp
-        m_MethodName: ExitToLevelSelect
+      - m_Target: {fileID: 1415591705}
+        m_TargetAssemblyTypeName: JigsawLevelButton, Assembly-CSharp
+        m_MethodName: OnClickExecuteNavigation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7121,6 +7158,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1327964739}
   m_CullTransparentMesh: 1
+--- !u!114 &1327964744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327964739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88cd650fd2255ad41a9009ce1f9f1024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JigsawLevelButton
+  buttonType: 1
+  selectedCategory: 0
+  selectedIndex: 0
+  categorySelectSceneName: homeGame
+  planetsSceneName: planetsScene
 --- !u!1 &1363820781
 GameObject:
   m_ObjectHideFlags: 0
@@ -7348,6 +7402,7 @@ GameObject:
   - component: {fileID: 1415591700}
   - component: {fileID: 1415591699}
   - component: {fileID: 1415591705}
+  - component: {fileID: 1415591706}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7492,10 +7547,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 1415591698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcdda8c0aacb8d34da3c717693d0d37d, type: 3}
+  m_Script: {fileID: 11500000, guid: 88cd650fd2255ad41a9009ce1f9f1024, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JigsawCanvasManager
-  areaLevels: []
+  m_EditorClassIdentifier: Assembly-CSharp::JigsawLevelButton
+  buttonType: 0
+  selectedCategory: 0
+  selectedIndex: 0
+  categorySelectSceneName: homeGame
+  planetsSceneName: planetsScene
+--- !u!114 &1415591706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415591698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dad158619d960c4ca37e26f407c28ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JigsawManager
+  signGameManager: {fileID: 0}
+  totalStarsDisplay: {fileID: 0}
+  exitWarningPanel: {fileID: 0}
+  winPanel: {fileID: 0}
+  winCanvasGroup: {fileID: 0}
+  exitCanvasGroup: {fileID: 0}
+  fadeDuration: 0.3
+  audioSource: {fileID: 0}
+  winSound: {fileID: 0}
+  confetti_1: {fileID: 0}
+  confetti_2: {fileID: 0}
+  minigamesScene: planetsScene
+  starsToReward: 3
+  aiTargetWord: 
+  displayWord: 
+  instructionalVideo: {fileID: 0}
+  TileMovementEnabled: 0
+  totalTilesInCorrectPosition: 0
+  totalTilesNeeded: 0
 --- !u!1001 &1502932634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7517,12 +7607,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 751229264}
     - target: {fileID: 1721670705960638395, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
+      propertyPath: m_text
+      value: Sign
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721670705960638395, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721670705960638395, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 5bd7fdac79df432429cc1f2942cb77ad, type: 2}
     - target: {fileID: 1721670705960638395, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
       propertyPath: m_isRightToLeft
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1721670705960638395, guid: a1eda89c08ab00c4cb2ea0a6e418bacb, type: 3}
       propertyPath: m_sharedMaterial

@@ -19,7 +19,7 @@ public class BridgePuzzleManager : MonoBehaviour
     public void OpenPuzzlePanel()
     {
         if (bridgeUnlocked) return;
-        puzzlePanel.SetActive(true);
+        //puzzlePanel.SetActive(true);
     }
 
     public void ContinueGame()

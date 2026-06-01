@@ -65,103 +65,110 @@ public class MediaPipeAPIBridge : MonoBehaviour
         // For standard LSTMs, it's usually best to only record when a hand is visible.
         if (result.handLandmarks == null || result.handLandmarks.Count == 0) return;
 
-
-        // Extract first hand
-        if (!useTwoHands)
-        {
-            var firstHand = result.handLandmarks[0];
-            float[] currentFrame = new float[expectedFeatSize];
-            int index = 0;
-
-            // Extract ONLY X and Y (Ignore Z) to get exactly 42 features
-            foreach (var landmark in firstHand.landmarks)
+        try {
+            // Extract first hand
+            if (!useTwoHands)
             {
-                if (index >= expectedFeatSize) break; // Safety check
+                var firstHand = result.handLandmarks[0];
+                float[] currentFrame = new float[expectedFeatSize];
+                int index = 0;
 
-                currentFrame[index++] = landmark.x;
-                currentFrame[index++] = landmark.y;
-            }
-
-            // Add this new frame to our history
-            sequenceBuffer.Enqueue(currentFrame);
-
-            // If we have more than 90 frames, throw away the oldest frame (Sliding Window)
-            if (sequenceBuffer.Count > expectedSeqLen)
-            {
-                sequenceBuffer.Dequeue();
-            }
-        }
-        else // for two hands
-        {
-            float[] currentFrame = new float[126];
-            int halfSize = 126 / 2;
-
-            // Keep track of which parking spaces are full
-            bool slot0Filled = false;
-            bool slot1Filled = false;
-
-            // Use handLandmarks or handWorldLandmarks depending on what you decided!
-            var landmarksList = result.handWorldLandmarks;
-
-            if (landmarksList != null && result.handedness != null)
-            {
-                // Loop through the detected hands (up to 2)
-                for (int i = 0; i < Mathf.Min(landmarksList.Count, 2); i++)
+                // Extract ONLY X and Y (Ignore Z) to get exactly 42 features
+                for (int j = 0; j < firstHand.landmarks.Count; j++)
                 {
-                    var hand = landmarksList[i];
+                    if (index >= expectedFeatSize) break; // Safety check
+                    var landmark = firstHand.landmarks[j];
+                    currentFrame[index++] = landmark.x;
+                    currentFrame[index++] = landmark.y;
+                }
 
-                    // Safely get the label. Default to "right" if MediaPipe glitches and returns null.
-                    string label = "right";
-                    if (i < result.handedness.Count && result.handedness[i].categories != null && result.handedness[i].categories.Count > 0)
-                    {
-                        label = result.handedness[i].categories[0].categoryName.ToLower();
-                    }
+                // Add this new frame to our history
+                sequenceBuffer.Enqueue(currentFrame);
 
-                    int offset = 0;
-
-                    // SMART PARKING LOGIC
-                    if (label == "right" && !slot0Filled)
-                    {
-                        offset = 0;
-                        slot0Filled = true;
-                    }
-                    else if (label == "left" && !slot1Filled)
-                    {
-                        offset = halfSize;
-                        slot1Filled = true;
-                    }
-                    else if (!slot0Filled) // If its preferred slot is taken, force it into Slot 0
-                    {
-                        offset = 0;
-                        slot0Filled = true;
-                    }
-                    else // Force it into Slot 1
-                    {
-                        offset = halfSize;
-                        slot1Filled = true;
-                    }
-
-                    int index = offset;
-
-                    // Extract features
-                    foreach (var landmark in hand.landmarks)
-                    {
-                        if (index >= offset + halfSize) break; // Safety check
-
-                        currentFrame[index++] = landmark.x;
-                        currentFrame[index++] = landmark.y;
-                        currentFrame[index++] = landmark.z;
-                        
-                    }
+                // If we have more than 90 frames, throw away the oldest frame (Sliding Window)
+                if (sequenceBuffer.Count > expectedSeqLen)
+                {
+                    sequenceBuffer.Dequeue();
                 }
             }
-
-            sequenceBuffer.Enqueue(currentFrame);
-
-            if (sequenceBuffer.Count > expectedSeqLen)
+            else // for two hands
             {
-                sequenceBuffer.Dequeue();
+                float[] currentFrame = new float[126];
+                int halfSize = 126 / 2;
+
+                // Keep track of which parking spaces are full
+                bool slot0Filled = false;
+                bool slot1Filled = false;
+
+                // Use handLandmarks or handWorldLandmarks depending on what you decided!
+                var landmarksList = result.handWorldLandmarks;
+
+                if (landmarksList != null && result.handedness != null)
+                {
+                    // Loop through the detected hands (up to 2)
+                    for (int i = 0; i < Mathf.Min(landmarksList.Count, 2); i++)
+                    {
+                        var hand = landmarksList[i];
+
+                        // Safely get the label. Default to "right" if MediaPipe glitches and returns null.
+                        string label = "right";
+                        if (i < result.handedness.Count && result.handedness[i].categories != null && result.handedness[i].categories.Count > 0)
+                        {
+                            label = result.handedness[i].categories[0].categoryName.ToLower();
+                        }
+
+                        int offset = 0;
+
+                        // SMART PARKING LOGIC
+                        if (label == "right" && !slot0Filled)
+                        {
+                            offset = 0;
+                            slot0Filled = true;
+                        }
+                        else if (label == "left" && !slot1Filled)
+                        {
+                            offset = halfSize;
+                            slot1Filled = true;
+                        }
+                        else if (!slot0Filled) // If its preferred slot is taken, force it into Slot 0
+                        {
+                            offset = 0;
+                            slot0Filled = true;
+                        }
+                        else // Force it into Slot 1
+                        {
+                            offset = halfSize;
+                            slot1Filled = true;
+                        }
+
+                        int index = offset;
+
+                        // Extract features
+                        for (int j = 0; j < hand.landmarks.Count; j++)
+                        {
+                            if (index >= offset + halfSize) break; // Safety check
+                            var landmark = hand.landmarks[j];
+                            currentFrame[index++] = landmark.x;
+                            currentFrame[index++] = landmark.y;
+                            currentFrame[index++] = landmark.z;
+
+                        }
+                    }
+                }
+
+                sequenceBuffer.Enqueue(currentFrame);
+
+                if (sequenceBuffer.Count > expectedSeqLen)
+                {
+                    sequenceBuffer.Dequeue();
+                }
             }
+        }
+        catch (System.Exception)
+        {
+            // A multithreading collision occurred! 
+            // We just return safely and let the next frame handle it.
+            return;
         }
     }
 
@@ -195,19 +202,6 @@ public class MediaPipeAPIBridge : MonoBehaviour
 
         isWaitingForResponse = true;
         timer = 0f;
-
-        // THIS IS FOR DEBUGGING!
-
-        // Grab just the first frame of data (126 features) from our flattened list
-        List<float> firstFrame = flattenedData.GetRange(0, expectedFeatSize);
-
-        // Print the first 5 numbers (Should be the Left Hand)
-        Debug.Log($"<color=cyan>UNITY LEFT HAND (0-4):</color> {string.Join(", ", firstFrame.GetRange(0, 5))}");
-
-        // Print the middle 5 numbers (Should be the Right Hand, starting at index 63)
-        Debug.Log($"<color=orange>UNITY RIGHT HAND (63-67):</color> {string.Join(", ", firstFrame.GetRange(63, 5))}");
-
-        // END OF DEBUGGING!
 
         // Send to FastAPI
         APIClient.Instance.RequestPrediction(
