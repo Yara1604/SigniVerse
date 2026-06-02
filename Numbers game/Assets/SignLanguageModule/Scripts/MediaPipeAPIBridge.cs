@@ -182,7 +182,7 @@ public class MediaPipeAPIBridge : MonoBehaviour
             flattenedData.AddRange(frame);
         }
 
-        // FOR MOBILE, TO CHANGE FLIP Y AXIS (Different coordinate system)
+        //// FOR MOBILE, TO CHANGE FLIP Y AXIS (Different coordinate system)
         //if (!useTwoHands)
         //{
         //    for (int i = 1; i < flattenedData.Count; i += 2)
@@ -197,7 +197,7 @@ public class MediaPipeAPIBridge : MonoBehaviour
         //        flattenedData[i] = -flattenedData[i];
         //    }
         //}
-       
+
 
 
         isWaitingForResponse = true;

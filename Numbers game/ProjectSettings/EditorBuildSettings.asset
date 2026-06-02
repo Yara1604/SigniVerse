@@ -113,7 +113,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Home Game Scenes/GameplayScenes/Kitchen Levels/cup.unity
     guid: a43322b8869a0f44ab38292837cef23d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Home Game Scenes/GameplayScenes/Kitchen Levels/fork.unity
     guid: 9b72ee051879d844880dda271d5cc707
   - enabled: 1

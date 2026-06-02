@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class TileMovement : MonoBehaviour
+public class TileMovement : MonoBehaviour,
+    IPointerDownHandler,
+    IDragHandler,
+    IPointerUpHandler
 {
     public Tile tile { get; set; }
-    public JigsawManager manager; // Make sure its assigned when tile created
+    public JigsawManager manager;
 
     private Vector3 mOffset = Vector3.zero;
     private SpriteRenderer mSpriteRenderer;
@@ -13,73 +17,77 @@ public class TileMovement : MonoBehaviour
         return new Vector3(tile.xIndex * 100f, tile.yIndex * 100f, 0.0f);
     }
 
-    void Start()
+    private void Start()
     {
         mSpriteRenderer = GetComponent<SpriteRenderer>();
 
         if (mSpriteRenderer == null)
         {
-            Debug.LogError($"TileMovement on {gameObject.name} is missing a SpriteRenderer!", this);
+            Debug.LogError(
+                $"TileMovement on {gameObject.name} is missing a SpriteRenderer!",
+                this);
         }
     }
 
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData)
     {
-        // SAFEGUARD: Only allow movement if the manager says it is okay
-        if (manager != null && !manager.TileMovementEnabled) return;
+        if (manager != null && !manager.TileMovementEnabled)
+            return;
 
-        // Bring the piece to the front layer so it doesn't slide under others
-        if (mSpriteRenderer != null) mSpriteRenderer.sortingOrder = 100;
+        if (mSpriteRenderer != null)
+            mSpriteRenderer.sortingOrder = 100;
 
-        // Calculate the offset so the tile doesn't snap its center exactly to the mouse
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0.0f));
-        mOffset = transform.position - mouseWorldPos;
-        mOffset.z = 0; // Lock the Z axis
+        Vector3 screenPos = eventData.position;
 
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(
+            new Vector3(screenPos.x, screenPos.y, -Camera.main.transform.position.z));
 
+        worldPos.z = transform.position.z;
+
+        mOffset = transform.position - worldPos;
     }
 
-    private void OnMouseDrag()
+    public void OnDrag(PointerEventData eventData)
     {
-        if (manager != null && !manager.TileMovementEnabled) return;
+        if (manager != null && !manager.TileMovementEnabled)
+            return;
 
-        Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0.0f);
-        Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + mOffset;
+        Vector3 screenPos = eventData.position;
 
-        // Keep the Z position exactly where it started
-        curPosition.z = transform.position.z;
-        transform.position = curPosition;
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(
+            new Vector3(screenPos.x, screenPos.y, -Camera.main.transform.position.z));
+
+        worldPos.z = transform.position.z;
+
+        transform.position = worldPos + mOffset;
     }
 
-    private void OnMouseUp()
+    public void OnPointerUp(PointerEventData eventData)
     {
-        if (manager != null && !manager.TileMovementEnabled) return;
+        if (manager != null && !manager.TileMovementEnabled)
+            return;
 
-        // Drop the piece back down to the normal layer
-        if (mSpriteRenderer != null) mSpriteRenderer.sortingOrder = 0;
+        if (mSpriteRenderer != null)
+            mSpriteRenderer.sortingOrder = 0;
 
-        // Check how close we are to the correct spot
         float dist = (transform.position - GetCorrectPosition()).magnitude;
 
         if (dist < 20.0f)
         {
-            // Snap into place
             transform.position = GetCorrectPosition();
 
-            // Tell the manager we scored
             if (manager != null)
             {
                 manager.AddCorrectTile();
             }
 
-            // Turn off the collider so the mouse can never click this piece again
             Collider2D myCollider = GetComponent<Collider2D>();
+
             if (myCollider != null)
             {
                 myCollider.enabled = false;
             }
 
-            // Destroy this movement script entirely to free up memory
             Destroy(this);
         }
     }
