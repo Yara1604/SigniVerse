@@ -5555,8 +5555,8 @@ MonoBehaviour:
   confetti_2: {fileID: 169431653}
   minigamesScene: planetsScene
   starsToReward: 3
-  aiTargetWord: "\u0641\u0631\u0634\u0627\u0647_\u0627\u0633\u0646\u0627\u0646"
-  displayWord: "\u0646\uFE8E\uFEE8\uFEB3\u0627_\u0647\uFE8E\uFEB7\uFEAE\uFED3"
+  aiTargetWord: "\u0641\u0631\u0634\u0627\u0629 \u0623\u0633\u0646\u0627\u0646"
+  displayWord: "\u0646\uFE8E\uFEE8\uFEB3\u0623 \u0629\uFE8E\uFEB7\uFEAE\uFED3"
   instructionalVideo: {fileID: 32900000, guid: bf42d562ae22ebd4ba3c955969a1a241, type: 3}
   TileMovementEnabled: 0
   totalTilesInCorrectPosition: 0
@@ -6354,6 +6354,7 @@ GameObject:
   - component: {fileID: 886275094}
   - component: {fileID: 886275093}
   - component: {fileID: 886275096}
+  - component: {fileID: 886275097}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6479,6 +6480,22 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &886275097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886275092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56666c5a40171f54783dd416a44f42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.Physics2DRaycaster
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &911072444
 GameObject:
   m_ObjectHideFlags: 0

@@ -183,20 +183,20 @@ public class MediaPipeAPIBridge : MonoBehaviour
         }
 
         //// FOR MOBILE, TO CHANGE FLIP Y AXIS (Different coordinate system)
-        //if (!useTwoHands)
-        //{
-        //    for (int i = 1; i < flattenedData.Count; i += 2)
-        //    {
-        //        flattenedData[i] = 1f - flattenedData[i];
-        //    }
-        //}
-        //else
-        //{
-        //    for (int i = 1; i < flattenedData.Count; i += 3)
-        //    {
-        //        flattenedData[i] = -flattenedData[i];
-        //    }
-        //}
+        if (!useTwoHands)
+        {
+            for (int i = 1; i < flattenedData.Count; i += 2)
+            {
+                flattenedData[i] = 1f - flattenedData[i];
+            }
+        }
+        else
+        {
+            for (int i = 1; i < flattenedData.Count; i += 3)
+            {
+                flattenedData[i] = -flattenedData[i];
+            }
+        }
 
 
 
