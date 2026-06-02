@@ -26,7 +26,7 @@ namespace Mediapipe.Unity.Sample.UI
       Open(contents);
       if (_baseRunner != null)
       {
-        _baseRunner.Pause();
+       // _baseRunner.Pause();
       }
     }
 
@@ -60,7 +60,7 @@ namespace Mediapipe.Unity.Sample.UI
       {
         if (_baseRunner != null)
         {
-          _baseRunner.Resume();
+         // _baseRunner.Resume();
         }
       }
     }

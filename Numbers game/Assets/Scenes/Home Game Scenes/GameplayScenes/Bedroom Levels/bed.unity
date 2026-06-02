@@ -13117,7 +13117,7 @@ MonoBehaviour:
   starsToReward: 3
   aiTargetWord: "\u0633\u0631\u064A\u0631"
   displayWord: "\uFEAE\uFEF3\uFEAE\uFEB3"
-  instructionalVideo: {fileID: 32900000, guid: 2aec7a7ff01735244a04b35248d9993f, type: 3}
+  instructionalVideo: {fileID: 32900000, guid: c2086a29f1450394cbd82ac055cd7fdc, type: 3}
   TileMovementEnabled: 0
   totalTilesInCorrectPosition: 0
   totalTilesNeeded: 0

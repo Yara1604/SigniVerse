@@ -532,10 +532,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'here should be the content for privacy button '
+  m_text: "\uFE96\uFEE7\uFEAE\uFE98\uFEE7\uFEF9\u0627 \uFEAE\uFE92\uFECB \uFEE2\uFEEB\u0631\uFEEE\uFEBB
+    \uFEDE\uFEB3\uFEAE\uFE97 \uFEFB \uFE94\uFE92\uFECC\uFEE0\uFEDF\u0627 \u060C\u0644\uFE8E\uFED4\uFEC3\uFEF7\u0627
+    \uFE94\uFEF4\uFEBB\uFEEE\uFEBC\uFEA7 \uFE94\uFEF3\uFE8E\uFEE4\uFEA4\uFEDF\r\n.\uFEC2\uFED8\uFED3
+    \u064A\uFEAA\uFEF3\uFEF7\u0627 \uFE94\uFEDB\uFEAE\uFEA3 \uFBFD\uFEE0\uFECB \u0644\uFEAA\uFE97
+    \u0637\uFE8E\uFED8\uFEE7 \uFEDE\uFEB3\uFEAE\uFE97 \uFE8E\uFEE4\uFEE7\u0625"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5bd7fdac79df432429cc1f2942cb77ad, type: 2}
+  m_sharedMaterial: {fileID: -4727406517565213920, guid: 5bd7fdac79df432429cc1f2942cb77ad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -566,7 +570,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -5732,10 +5736,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Privacy Button
+  m_text: "\uFE94\uFEF4\uFEBB\uFEEE\uFEBC\uFEA8\uFEDF\u0627"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5bd7fdac79df432429cc1f2942cb77ad, type: 2}
+  m_sharedMaterial: {fileID: -4727406517565213920, guid: 5bd7fdac79df432429cc1f2942cb77ad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12136,8 +12140,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u062A\u0627\u0631\uFE8E\uFEB7\uFEF9\u0627 \u0629\uFEAE\uFEA0\uFEE3 \u0621\u0627\u0631\u0648
-    \uFED6\uFEF3\uFEAE\uFED4\uFEDF\u0627"
+  m_text: ".\u0646\u062F\u0631\uFEF7\u0627 \uFEF2\uFED3 \uFEE2\uFEBC\uFEDF\u0627
+    \uFECA\uFEE4\uFE98\uFEA0\uFEE3 \uFE94\uFEE3\uFEAA\uFEA7 \uFEF2\uFED3 \uFE8E\uFEE8\uFEE4\uFEE0\uFECB
+    \u0645\uFEAA\uFEA8\uFE98\uFEB4\uFEE7 \u0646\u0623 \uFE8E\uFEE8\uFE92\uFE92\uFEA3\u0623
+    \u062A\uFE8E\uFE9F\uFEAE\uFE92\uFEE3 \uFE94\uFECC\uFE91\u0631\u0623 \uFEE6\uFEA4\uFEE7"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5bd7fdac79df432429cc1f2942cb77ad, type: 2}
   m_sharedMaterial: {fileID: -4727406517565213920, guid: 5bd7fdac79df432429cc1f2942cb77ad, type: 2}
@@ -12577,10 +12583,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'here should be the content for team button '
+  m_text: "\uFECA\uFEE4\uFE98\uFEA0\uFEE3 \uFE94\uFEE3\uFEAA\uFEA7 \uFEF2\uFED3 \uFE8E\uFEE8\uFEE4\uFEE0\uFECB
+    \u0645\u0627\uFEAA\uFEA8\uFE98\uFEB3\u0627 \uFE8E\uFEE7\u062F\u0631\u0623 \u062A\uFE8E\uFEA0\uFEE3\uFEAE\uFE92\uFEE3
+    \uFE94\uFECC\uFE91\u0631\u0623 \uFEE6\uFEA4\uFEE7\r\n\u0646\u062F\u0631\uFEF7\u0627
+    \uFEF2\uFED3 \uFEE2\uFEBC\uFEDF\u0627\r\n\r\n:\uFEE6\uFEA4\uFEE7\r\n\uFEF2\uFECF\uFE8E\uFEF3
+    \u0627\u0631\uFE8E\uFEF3\r\n\u0644\uFE8E\uFEC0\uFEE7 \uFE8E\uFEE3\u0627\u0631\r\n\uFEF2\uFED4\uFE8B\uFE8E\uFEC7\u0648
+    \u0646\uFE8E\uFEE4\uFEF3\u0625\r\n\uFE94\uFED4\uFEDF\uFEFC\uFEB8\uFEDF\u0627
+    \u062D\uFEAE\uFED3"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5bd7fdac79df432429cc1f2942cb77ad, type: 2}
+  m_sharedMaterial: {fileID: -4727406517565213920, guid: 5bd7fdac79df432429cc1f2942cb77ad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12611,7 +12623,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -12846,10 +12858,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Team Button
+  m_text: "\uFEE6\uFEA4\uFEE7 \uFEE6\uFEE3"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5bd7fdac79df432429cc1f2942cb77ad, type: 2}
+  m_sharedMaterial: {fileID: -4727406517565213920, guid: 5bd7fdac79df432429cc1f2942cb77ad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

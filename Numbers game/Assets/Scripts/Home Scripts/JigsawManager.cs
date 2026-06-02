@@ -258,8 +258,8 @@ public class JigsawManager : MonoBehaviour
 
         List<Rect> regions = new List<Rect>
         {
-            new Rect(-boardWidth * 0.8f, 0f, boardWidth * 0.5f, boardHeight),
-            new Rect(boardWidth * 1.3f, 0f, boardWidth * 0.5f, boardHeight)
+            new Rect(-boardWidth * 0.45f, 0f, boardWidth * 0.35f, boardHeight),
+            new Rect(boardWidth * 1.1f, 0f, boardWidth * 0.35f, boardHeight)
         };
 
         for (int i = 0; i < numTileX; ++i)
@@ -274,6 +274,7 @@ public class JigsawManager : MonoBehaviour
         foreach (var item in activeCoroutines) yield return item;
         activeCoroutines.Clear();
         TileMovementEnabled = true;
+
     }
 
     private void ShuffleTile(GameObject obj, List<Rect> regions)

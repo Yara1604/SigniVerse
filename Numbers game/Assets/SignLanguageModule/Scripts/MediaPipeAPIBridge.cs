@@ -91,7 +91,8 @@ public class MediaPipeAPIBridge : MonoBehaviour
                     sequenceBuffer.Dequeue();
                 }
             }
-            else // for two hands
+
+            else // for two hands on laptop
             {
                 float[] currentFrame = new float[126];
                 int halfSize = 126 / 2;
@@ -116,6 +117,13 @@ public class MediaPipeAPIBridge : MonoBehaviour
                         {
                             label = result.handedness[i].categories[0].categoryName.ToLower();
                         }
+
+                        // Flipping FOR MOBILE
+                        if (label == "right")
+                            label = "left";
+                        else if (label == "left")
+                            label = "right";
+
 
                         int offset = 0;
 
@@ -163,6 +171,8 @@ public class MediaPipeAPIBridge : MonoBehaviour
                     sequenceBuffer.Dequeue();
                 }
             }
+
+
         }
         catch (System.Exception)
         {

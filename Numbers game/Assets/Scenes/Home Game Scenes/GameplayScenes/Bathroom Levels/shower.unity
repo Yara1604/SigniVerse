@@ -328,7 +328,7 @@ MonoBehaviour:
   starsToReward: 3
   aiTargetWord: "\u0627\u0633\u062A\u062D\u0645\u0627\u0645"
   displayWord: "\u0645\uFE8E\uFEE4\uFEA4\uFE98\uFEB3\u0627"
-  instructionalVideo: {fileID: 32900000, guid: 9d811bd27e481534ba8a9acc4f0c7a99, type: 3}
+  instructionalVideo: {fileID: 32900000, guid: 776eaf7ade1e7524ea382022e0cabb15, type: 3}
   TileMovementEnabled: 0
   totalTilesInCorrectPosition: 0
   totalTilesNeeded: 0

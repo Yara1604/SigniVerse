@@ -6292,7 +6292,7 @@ MonoBehaviour:
   starsToReward: 3
   aiTargetWord: "\u0647\u0627\u062A\u0641"
   displayWord: "\uFED2\uFE97\uFE8E\uFEEB"
-  instructionalVideo: {fileID: 32900000, guid: 4ccf7434aabca0f4780d7cf3dbf96511, type: 3}
+  instructionalVideo: {fileID: 32900000, guid: 4093c79f14be19f4ba97c91746861143, type: 3}
   TileMovementEnabled: 0
   totalTilesInCorrectPosition: 0
   totalTilesNeeded: 0

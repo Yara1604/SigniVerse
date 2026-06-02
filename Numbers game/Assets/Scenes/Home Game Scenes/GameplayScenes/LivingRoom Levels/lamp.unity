@@ -7156,7 +7156,7 @@ MonoBehaviour:
   starsToReward: 3
   aiTargetWord: "\u0636\u0648\u0621"
   displayWord: "\u0621\uFEEE\uFEBF"
-  instructionalVideo: {fileID: 32900000, guid: 2aec7a7ff01735244a04b35248d9993f, type: 3}
+  instructionalVideo: {fileID: 32900000, guid: 95aa9534e096ae4418cd3a57a90eb90c, type: 3}
   TileMovementEnabled: 0
   totalTilesInCorrectPosition: 0
   totalTilesNeeded: 0
